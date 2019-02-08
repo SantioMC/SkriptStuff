@@ -1,0 +1,210 @@
+options:
+	A: &8[&c&k|&4&lRekt&c&k|&8] 	
+	B: &8[&4&k|&c&lEZ&4&k|&8]
+	C: &8[&c&k|&4&lR&c&la&b&li&d&ln&3&lb&6&lo&5&lw&c&k|&8]
+	D: &8[&c&k|&6&lVAPE&c&k|&8]
+	E: &8[&a&k|&b&lSalty&a&k|&8]
+	F: &8[&4&k|&3&lTank&4&k|&8]
+	G: &8[&a&k|&e&l14&a&k|&8]
+	H: &8[&a&k|&2&l$&a&k|&8]
+	I: &8[&b&k|&3&lToxic&b&k|&8]
+	J: &8[&c&k|&4&lBloody&c&k|&8]
+	K: &8[&d&k|&5&lMeme&d&k|&8]
+	L: &8[&e&k|&6&lViper&e&k|&8]
+	M: &8[&e&k|&6&l2019&e&k|&8]
+	N: &8[&4&k|&c&l❤&4&k|&8]
+	Store: &a(Coming Soon)
+on first join:
+	set {rekttag.%uuid of player%} to false
+	set {eztag.%uuid of player%} to false
+	set {rainbowtag.%uuid of player%} to false
+	set {vapetag.%uuid of player%} to false
+	set {saltytag.%uuid of player%} to false
+	set {tanktag.%uuid of player%} to false
+	set {fourteentag.%uuid of player%} to false
+	
+	
+	
+	
+command /tag:
+	aliases: /tags, /t
+	permission: rank.default
+	permission message: &cNo permission.
+	trigger:
+		open virtual chest inventory with size 5 named "&aTreaze Tags" to player
+		format gui slot 0 of player with black stained glass named "&0."
+		format gui slot 1 of player with black stained glass named "&0." 
+		format gui slot 2 of player with black stained glass named "&0." 
+		format gui slot 3 of player with black stained glass named "&0." 
+		format gui slot 4 of player with black stained glass named "&0." 
+		format gui slot 5 of player with black stained glass named "&0." 
+		format gui slot 6 of player with black stained glass named "&0." 
+		format gui slot 7 of player with black stained glass named "&0." 
+		format gui slot 8 of player with black stained glass named "&0." 
+		format gui slot 9 of player with black stained glass named "&0."
+		if {rekttag.%uuid of player%} is false:
+			format gui slot 10 of player with book named "{@A} &7Tag" with lore "&7Show off your own &aPREMIUM&7 tag!||&7&m---------------||&4Currently Locked&7||&7&m---------------||&7Unlock this tag today at ||{@Store}||" to close then run function rekttag(player)
+		else if {rekttag.%uuid of player%} is true:
+			format gui slot 10 of player with book named "{@A} &7Tag" with lore "&7Show off your own &aPREMIUM&7 tag!||&7&m---------------||&aUnlocked, Click to Equip.&7||&7&m---------------||&7Unlock this tag today at ||{@Store}||" to close then run function rekttag(player)
+		if {eztag.%uuid of player%} is false:
+			format gui slot 11 of player with book named "{@B} &7Tag" with lore "&7Show off your own &aPREMIUM&7 tag!||&7&m---------------||&4Currently Locked&7||&7&m---------------||&7Unlock this tag today at ||{@Store}||" to close then run function eztag(player)
+		else if {eztag.%uuid of player%} is true:
+			format gui slot 11 of player with book named "{@B} &7Tag" with lore "&7Show off your own &aPREMIUM&7 tag!||&7&m---------------||&aUnlocked, Click to Equip.&7||&7&m---------------||&7Unlock this tag today at ||{@Store}||" to close then run function eztag(player)
+		if {rainbowtag.%uuid of player%} is false:
+			format gui slot 12 of player with book named "{@C} &7Tag" with lore "&7Show off your own &aPREMIUM&7 tag!||&7&m---------------||&4Currently Locked&7||&7&m---------------||&7Unlock this tag today at ||{@Store}||" to close then run function rainbowtag(player)
+		else if {rainbowtag.%uuid of player%} is true:
+			format gui slot 12 of player with book named "{@C} &7Tag" with lore "&7Show off your own &aPREMIUM&7 tag!||&7&m---------------||&aUnlocked, Click to Equip.&7||&7&m---------------||&7Unlock this tag today at ||{@Store}||" to close then run function rainbowtag(player)
+		if {vapetag.%uuid of player%} is false:
+			format gui slot 13 of player with book named "{@D} &7Tag" with lore "&7Show off your own &aPREMIUM&7 tag!||&7&m---------------||&4Currently Locked&7||&7&m---------------||&7Unlock this tag today at ||{@Store}||" to close then run function vapetag(player)
+		else if {vapetag.%uuid of player%} is true:
+			format gui slot 13 of player with book named "{@D} &7Tag" with lore "&7Show off your own &aPREMIUM&7 tag!||&7&m---------------||&aUnlocked, Click to Equip.&7||&7&m---------------||&7Unlock this tag today at ||{@Store}||" to close then run function vapetag(player)
+		if {saltytag.%uuid of player%} is false:
+			format gui slot 14 of player with book named "{@E} &7Tag" with lore "&7Show off your own &aPREMIUM&7 tag!||&7&m---------------||&4Currently Locked&7||&7&m---------------||&7Unlock this tag today at ||{@Store}||" to close then run function saltytag(player)
+		else if {saltytag.%uuid of player%} is true:
+			format gui slot 14 of player with book named "{@E} &7Tag" with lore "&7Show off your own &aPREMIUM&7 tag!||&7&m---------------||&aUnlocked, Click to Equip.&7||&7&m---------------||&7Unlock this tag today at ||{@Store}||" to close then run function saltytag(player)
+		if {tanktag.%uuid of player%} is false:
+			format gui slot 15 of player with book named "{@F} &7Tag" with lore "&7Show off your own &aPREMIUM&7 tag!||&7&m---------------||&4Currently Locked&7||&7&m---------------||&7Unlock this tag today at ||{@Store}||" to close then run function tanktag(player)
+		else if {tanktag.%uuid of player%} is true:
+			format gui slot 15 of player with book named "{@F} &7Tag" with lore "&7Show off your own &aPREMIUM&7 tag!||&7&m---------------||&aUnlocked, Click to Equip.&7||&7&m---------------||&7Unlock this tag today at ||{@Store}||" to close then run function tanktag(player)
+		if {fourteentag.%uuid of player%} is false:
+			format gui slot 16 of player with book named "{@G} &7Tag" with lore "&7Show off your own &aPREMIUM&7 tag!||&7&m---------------||&4Currently Locked&7||&7&m---------------||&7Unlock this tag today at ||{@Store}||" to close then run function fourteentag(player)
+		else if {fourteentag.%uuid of player%} is true:
+			format gui slot 16 of player with book named "{@G} &7Tag" with lore "&7Show off your own &aPREMIUM&7 tag!||&7&m---------------||&aUnlocked, Click to Equip.&7||&7&m---------------||&7Unlock this tag today at ||{@Store}||" to close then run function fourteentag(player)
+		format gui slot 17 of player with black stained glass named "&0." 
+		format gui slot 18 of player with black stained glass named "&0." 
+		format gui slot 19 of player with book named "{@H} &7Tag" with lore "&7Show off your own &8FREE&7 tag!||&7&m---------------||&aUnlocked, Click to Equip.&7||&7&m---------------||&7Purchase a premium tag today at ||{@Store}||" to close then run function moneytag(player)
+		format gui slot 19 of player with book named "{@I} &7Tag" with lore "&7Show off your own &8FREE&7 tag!||&7&m---------------||&aUnlocked, Click to Equip.&7||&7&m---------------||&7Purchase a premium tag today at ||{@Store}||" to close then run function toxictag(player)
+		format gui slot 20 of player with book named "{@J} &7Tag" with lore "&7Show off your own &8FREE&7 tag!||&7&m---------------||&aUnlocked, Click to Equip.&7||&7&m---------------||&7Purchase a premium tag today at ||{@Store}||" to close then run function bloodytag(player)
+		format gui slot 21 of player with book named "{@K} &7Tag" with lore "&7Show off your own &8FREE&7 tag!||&7&m---------------||&aUnlocked, Click to Equip.&7||&7&m---------------||&7Purchase a premium tag today at ||{@Store}||" to close then run function memetag(player)
+		format gui slot 22 of player with book named "{@L} &7Tag" with lore "&7Show off your own &8FREE&7 tag!||&7&m---------------||&aUnlocked, Click to Equip.&7||&7&m---------------||&7Purchase a premium tag today at ||{@Store}||" to close then run function vipertag(player)
+		format gui slot 23 of player with book named "{@M} &7Tag" with lore "&7Show off your own &8FREE&7 tag!||&7&m---------------||&aUnlocked, Click to Equip.&7||&7&m---------------||&7Purchase a premium tag today at ||{@Store}||" to close then run function newyearstag(player)
+		format gui slot 24 of player with book named "{@N} &7Tag" with lore "&7Show off your own &8FREE&7 tag!||&7&m---------------||&aUnlocked, Click to Equip.&7||&7&m---------------||&7Purchase a premium tag today at ||{@Store}||" to close then run function hearttag(player)
+		format gui slot 25 of player with barrier named "&cMore Tags Coming soon..." 
+		format gui slot 31 of player with barrier named "&fRemove Tag" to close then run function removetag(player)
+		format gui slot 26 of player with black stained glass named "&0." 
+			
+function removetag(p: player):
+	set {_p}'s suffix to ""
+	send "&a&lTREAZE &8» &7Successfully removed your tag." to {_p}	
+
+function rekttag(p: player):
+	set {_uuid} to uuid of {_p}
+	if {rekttag.%{_uuid}%} is true:
+		set {_p}'s suffix to " {@A}"
+		send "&a&lTREAZE &8» &7Successfully set your tag to ""{@A}""" to {_p}
+	if {rekttag.%{_uuid}%} is false:
+		send "&a&lTREAZE &8» &7This tag is locked. &7Purchase it here {@Store}" to {_p}
+		
+		
+function eztag(p: player):
+	set {_uuid} to uuid of {_p}
+	if {eztag.%{_uuid}%} is true:
+		set {_p}'s suffix to " {@B}"
+		send "&a&lTREAZE &8» &7Successfully set your tag to ""{@B}""" to {_p}
+	if {eztag.%{_uuid}%} is false:
+		send "&a&lTREAZE &8» &7This tag is locked. &7Purchase it here {@Store}" to {_p}
+		
+		
+function rainbowtag(p: player):
+	set {_uuid} to uuid of {_p}
+	if {rainbowtag.%{_uuid}%} is true:
+		set {_p}'s suffix to " {@C}"
+		send "&a&lTREAZE &8» &7Successfully set your tag to ""{@C}""" to {_p}
+	if {rainbowtag.%{_uuid}%} is false:
+		send "&a&lTREAZE &8» &7This tag is locked. &7Purchase it here {@Store}" to {_p}		
+
+		
+function vapetag(p: player):
+	set {_uuid} to uuid of {_p}
+	if {vapetag.%{_uuid}%} is true:
+		set {_p}'s suffix to " {@D}"
+		send "&a&lTREAZE &8» &7Successfully set your tag to ""{@D}""" to {_p}
+	if {vapetag.%{_uuid}%} is false:
+		send "&a&lTREAZE &8» &7This tag is locked. &7Purchase it here {@Store}" to {_p}
+		
+		
+function saltytag(p: player):
+	set {_uuid} to uuid of {_p}
+	if {saltytag.%{_uuid}%} is true:
+		set {_p}'s suffix to " {@E}"
+		send "&a&lTREAZE &8» &7Successfully set your tag to ""{@E}""" to {_p}
+	if {saltytag.%{_uuid}%} is false:
+		send "&a&lTREAZE &8» &7This tag is locked. &7Purchase it here {@Store}" to {_p}
+		
+		
+function tanktag(p: player):
+	set {_uuid} to uuid of {_p}
+	if {tanktag.%{_uuid}%} is true:
+		set {_p}'s suffix to " {@F}"
+		send "&a&lTREAZE &8» &7Successfully set your tag to ""{@F}""" to {_p}
+	if {tanktag.%{_uuid}%} is false:
+		send "&a&lTREAZE &8» &7This tag is locked. &7Purchase it here {@Store}" to {_p}
+		
+		
+function fourteentag(p: player):
+	set {_uuid} to uuid of {_p}
+	if {14tag.%{_uuid}%} is true:
+		set {_p}'s suffix to " {@G}"
+		send "&a&lTREAZE &8» &7Successfully set your tag to ""{@G}""" to {_p}
+	if {14tag.%{_uuid}%} is false:
+		send "&a&lTREAZE &8» &7This tag is locked. &7Purchase it here {@Store}" to {_p}		
+
+# End of Premium tag Functions #
+
+# Start of Free tag Functions #
+
+function moneytag(p: player):
+	set {_p}'s suffix to " {@H}"
+	send "&a&lTREAZE &8» &7Successfully set your tag to ""{@H}""" to {_p}
+	stop
+function toxictag(p: player):
+	set {_p}'s suffix to " {@I}"
+	send "&a&lTREAZE &8» &7Successfully set your tag to ""{@I}""" to {_p}
+	stop
+function bloodytag(p: player):
+	set {_p}'s suffix to " {@J}"
+	send "&a&lTREAZE &8» &7Successfully set your tag to ""{@J}""" to {_p}
+	stop
+function memetag(p: player):
+	set {_p}'s suffix to " {@K}"
+	send "&a&lTREAZE &8» &7Successfully set your tag to ""{@K}""" to {_p}
+	stop
+function vipertag(p: player):
+	set {_p}'s suffix to " {@L}"
+	send "&a&lTREAZE &8» &7Successfully set your tag to ""{@L}""" to {_p}
+	stop
+function newyearstag(p: player):
+	set {_p}'s suffix to " {@M}"
+	send "&a&lTREAZE &8» &7Successfully set your tag to ""{@M}""" to {_p}
+	stop	
+function hearttag(p: player):
+	set {_p}'s suffix to " {@N}"
+	send "&a&lTREAZE &8» &7Successfully set your tag to ""{@N}""" to {_p}
+	stop
+# End of Free tag Functions #
+
+
+command /fixtagvariables [<text>]:
+	permission: *
+	permission message: &cNo Permission
+	trigger:
+		if arg 1 is "unlock":
+			set {rekttag.%uuid of player%} to true
+			set {eztag.%uuid of player%} to true
+			set {rainbowtag.%uuid of player%} to true
+			set {vapetag.%uuid of player%} to true
+			set {saltytag.%uuid of player%} to true
+			set {tanktag.%uuid of player%} to true
+			set {fourteentag.%uuid of player%} to true
+			send "&aUnlocked All Tags"
+			stop
+		if arg 1 is "lock":
+			set {rekttag.%uuid of player%} to false
+			set {eztag.%uuid of player%} to false
+			set {rainbowtag.%uuid of player%} to false
+			set {vapetag.%uuid of player%} to false
+			set {saltytag.%uuid of player%} to false
+			set {tanktag.%uuid of player%} to false
+			set {fourteentag.%uuid of player%} to false
+			send "&cLocked All Tags"
+			stop

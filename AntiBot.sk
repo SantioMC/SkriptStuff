@@ -1,0 +1,30 @@
+# ANTI BOT # 
+options:
+	title: &7Back already &d%player%&7?
+	subtitle: &7Support our server @ &dhttps://treaze.buycraft.net/
+
+on join:
+    set {allowchat.%player%} to false
+    send player title "{@title}" with subtitle "{@subtitle}" for 7 seconds
+    wait 2 ticks
+    set {randomnumber::%player%} to a random integer between 1000 and 9999
+    wait 25 ticks
+    send "&a&lTREAZE &8» &7In order to speak in chat you must type this number! &f(&a%{randomnumber::%player%}%&f)"
+    stop
+
+on chat:  
+    if message does not contain "{randomnumber::%player%}":
+        cancel event
+        send "&a&lTREAZE &8» &7In order to speak in chat you must type this number! &f(&a%{_randomnumber::%player%}%&f)" to player
+    else if message contains "{randomnumber::%player%}":
+        send "&a&lTREAZE &8» &fYou may now speak in chat"
+        delete {randomnumber::%player%}
+        set {allowchat.%player%} to true
+    else if {allowchat.%player%} is true:
+        stop
+
+on any movement:
+    if {allowchat.%player%} is true:
+        cancel event
+    else if {allowchat.%player%} is false:
+        stop
